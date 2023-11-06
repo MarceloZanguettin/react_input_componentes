@@ -1,14 +1,19 @@
 import React from 'react';
 
-const Radio = () => {
+const Radio = ({ options, value, setValue }) => {
   return (
     <>
-      <label>
-        <input type="radio" />
-      </label>
-      <label>
-        <input type="radio" />
-      </label>
+      {options.map((option) => (
+        <label key={option}>
+          <input
+            type="radio"
+            value={option}
+            checked={value === option}
+            onChange={({ target }) => setValue(target.value)}
+          />
+          {option}
+        </label>
+      ))}
     </>
   );
 };

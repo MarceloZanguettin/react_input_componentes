@@ -7,10 +7,11 @@ const App = () => {
   const [nome, setNome] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [produto, setProduto] = React.useState('');
+  const [cor, setCor] = React.useState('');
 
   return (
     <form>
-      <Radio />
+      <Radio options={['Azul', 'Vermelho']} value={cor} setValue={setCor} />
       <Select
         options={['smartphone', 'tablet']}
         value={produto}
