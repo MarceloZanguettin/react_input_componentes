@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Select = () => {
+const Select = ({ options }) => {
   return (
     <select>
       <option value="notebook">Notebook</option>

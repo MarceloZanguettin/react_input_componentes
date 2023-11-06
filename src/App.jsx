@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <form>
-      <Select options={[]} />
+      <Select options={['smartphone', 'tablet']} />
       <Input id="nome" label="Nome" value={nome} setValue={setNome} required />
       <Input id="email" label="Email" value={email} setValue={setEmail} />
       <button>Enviar</button>
