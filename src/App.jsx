@@ -1,6 +1,7 @@
 import React from 'react';
 import Input from './Form/Input';
 import Select from './Form/Select';
+import Radio from './Form/Radio';
 
 const App = () => {
   const [nome, setNome] = React.useState('');
@@ -9,6 +10,7 @@ const App = () => {
 
   return (
     <form>
+      <Radio />
       <Select
         options={['smartphone', 'tablet']}
         value={produto}
