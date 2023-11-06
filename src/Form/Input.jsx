@@ -1,12 +1,16 @@
 import React from 'react';
 
-const Input = ({ id, label }) => {
-  const [nome, setNome] = React.useState('');
-
+const Input = ({ id, label, value, setValue }) => {
   return (
     <div>
       <label htmlFor={id}>{label}</label>
-      <input type="text" id={id} name={id} />
+      <input
+        type="text"
+        id={id}
+        name={id}
+        value={value}
+        onChange={({ target }) => setValue(target.value)}
+      />
     </div>
   );
 };
