@@ -4,8 +4,8 @@ import Input from './Form/Input';
 const App = () => {
   return (
     <form>
-      <Input label="Nome" />
-      <Input label="Email" />
+      <Input id="nome" label="Nome" />
+      <Input id="email" label="Email" />
     </form>
   );
 };
