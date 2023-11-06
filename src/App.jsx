@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from './Form/Input';
+import Select from './Form/Select';
 
 const App = () => {
   const [nome, setNome] = React.useState('');
@@ -7,6 +8,7 @@ const App = () => {
 
   return (
     <form>
+      <Select />
       <Input id="nome" label="Nome" value={nome} setValue={setNome} required />
       <Input id="email" label="Email" value={email} setValue={setEmail} />
       <button>Enviar</button>
