@@ -7,8 +7,8 @@ const App = () => {
 
   return (
     <form>
-      <Input id="nome" label="Nome" />
-      <Input id="email" label="Email" />
+      <Input id="nome" label="Nome" value={nome} setValue={setNome} />
+      <Input id="email" label="Email" value={email} setValue={setEmail} />
     </form>
   );
 };
