@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <form>
-      <Input id="nome" label="Nome" value={nome} setValue={setNome} />
+      <Input id="nome" label="Nome" value={nome} setValue={setNome} required />
       <Input id="email" label="Email" value={email} setValue={setEmail} />
       <button>Enviar</button>
     </form>
