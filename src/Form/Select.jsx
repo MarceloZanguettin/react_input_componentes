@@ -7,13 +7,13 @@ const Select = ({ options, value, setValue, ...props }) => {
       onChange={({ target }) => setValue(target.value)}
       {...props}
     >
-      <options value="" disabled>
+      <option value="" disabled>
         Selecione
-      </options>
-      {options.map((options) => (
-        <options key={options} value={options}>
-          {options}
-        </options>
+      </option>
+      {options.map((option) => (
+        <option key={option} value={option}>
+          {option}
+        </option>
       ))}
     </select>
   );
