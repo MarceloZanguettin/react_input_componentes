@@ -32,6 +32,10 @@ const App = () => {
     console.log(validadteCep(target.value));
   }
 
+  function handleChanger({ target }) {
+    setCep(target.value);
+  }
+
   return (
     <form>
       <Input
@@ -41,7 +45,7 @@ const App = () => {
         placeholder="00000-000"
         value={cep}
         onBlur={handleBur}
-        setValue={setCep}
+        onChange={handleChanger}
       />
       {error && <p>{error}</p>}
     </form>
