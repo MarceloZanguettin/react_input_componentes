@@ -3,8 +3,10 @@ import Input from './Form/Input';
 import Select from './Form/Select';
 import Radio from './Form/Radio';
 import Checkbox from './Form/Checkbox';
+import useForm from './Hooks/useForm';
 
 const App = () => {
+  const cep = useForm('cep');
   /*
   const [nome, setNome] = React.useState('');
   const [email, setEmail] = React.useState('');
@@ -12,34 +14,9 @@ const App = () => {
   const [cor, setCor] = React.useState('');
   const [linguagens, setLinguagens] = React.useState([]);
   */
-  const [cep, setCep] = React.useState('');
-  const [error, setError] = React.useState(null);
-
-  function validadteCep(value) {
-    if (value.length === 0) {
-      setError('Preencha um valor');
-      return false;
-    } else if (!/^\d{5}-?\d{3}$/.test(value)) {
-      setError('Preencha um CEP válido');
-      return false;
-    } else {
-      setError(null);
-      return true;
-    }
-  }
-
-  function handleBur({ target }) {
-    console.log(validadteCep(target.value));
-  }
-
-  function handleChanger({ target }) {
-    if (error) validadteCep(target.value);
-    setCep(target.value);
-  }
-
   function handleSubmit(event) {
     event.preventDefault();
-    if (validadteCep(cep)) {
+    if (true)) {
       console.log('Enviou');
     } else {
       console.log('Não enviar');
@@ -53,9 +30,7 @@ const App = () => {
         id="cep"
         type="text"
         placeholder="00000-000"
-        value={cep}
-        onBlur={handleBur}
-        onChange={handleChanger}
+        {...cep}
       />
       {error && <p>{error}</p>}
       <button>Enviar</button>
