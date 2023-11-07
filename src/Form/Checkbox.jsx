@@ -10,7 +10,7 @@ const Checkbox = ({ options, value, setValue }) => {
   }
 
   return (
-    <div>
+    <>
       {options.map((option) => (
         <label key={option}>
           <input
@@ -22,7 +22,7 @@ const Checkbox = ({ options, value, setValue }) => {
           {option}
         </label>
       ))}
-    </div>
+    </>
   );
 };
 
