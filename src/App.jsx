@@ -13,11 +13,23 @@ const App = () => {
   const [linguagens, setLinguagens] = React.useState([]);
   */
   const [cep, setCep] = React.useState('');
+  const [error, setError] = React.useState(null);
+
+  function validadteCep(value) {
+    if (value.length === 0) {
+      setError('Preencha um valor');
+      return false;
+    } else if (!/^\d{5}-?\d{3}$/.test(value)) {
+      setError('Preencha um CEP válido');
+      return false;
+    } else {
+      setError(null);
+      return true;
+    }
+  }
 
   function handleBur({ target }) {
-    const regex = /^\d{5}-?\d{3}$/;
-    const validacao = regex.test(target.value);
-    console.log(validacao);
+    console.log(validadteCep(target.value));
   }
 
   return (
