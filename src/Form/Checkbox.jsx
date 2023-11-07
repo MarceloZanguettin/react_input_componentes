@@ -1,11 +1,14 @@
 import React from 'react';
 
-const Checkbox = () => {
+const Checkbox = ({ options, value, setValue }) => {
   return (
     <div>
-      <label>
-        <input type="checkbox" />
-      </label>
+      {options.map((option) => (
+        <label>
+          <input type="checkbox" value={option} />
+          {option}
+        </label>
+      ))}
     </div>
   );
 };
