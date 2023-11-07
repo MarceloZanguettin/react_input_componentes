@@ -33,6 +33,7 @@ const App = () => {
   }
 
   function handleChanger({ target }) {
+    if (error) validadteCep(target.value);
     setCep(target.value);
   }
 
