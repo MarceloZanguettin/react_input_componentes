@@ -5,6 +5,7 @@ import Radio from './Form/Radio';
 import Checkbox from './Form/Checkbox';
 
 const App = () => {
+  const [cep, setCep] = React.useState('');
   /*
   const [nome, setNome] = React.useState('');
   const [email, setEmail] = React.useState('');
@@ -12,7 +13,18 @@ const App = () => {
   const [cor, setCor] = React.useState('');
   const [linguagens, setLinguagens] = React.useState([]);
   */
-  return;
+  return (
+    <form>
+      <Input
+        label="CEP"
+        id="cep"
+        type="text"
+        placeholder="00000-000"
+        value={cep}
+        setValue={setCep}
+      />
+    </form>
+  );
   /*
   (
     <form>
