@@ -16,7 +16,7 @@ const App = () => {
   */
   function handleSubmit(event) {
     event.preventDefault();
-    if (true)) {
+    if (true) {
       console.log('Enviou');
     } else {
       console.log('Não enviar');
@@ -32,7 +32,6 @@ const App = () => {
         placeholder="00000-000"
         {...cep}
       />
-      {error && <p>{error}</p>}
       <button>Enviar</button>
     </form>
   );
