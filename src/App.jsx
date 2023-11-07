@@ -5,7 +5,6 @@ import Radio from './Form/Radio';
 import Checkbox from './Form/Checkbox';
 
 const App = () => {
-  const [cep, setCep] = React.useState('');
   /*
   const [nome, setNome] = React.useState('');
   const [email, setEmail] = React.useState('');
@@ -13,6 +12,12 @@ const App = () => {
   const [cor, setCor] = React.useState('');
   const [linguagens, setLinguagens] = React.useState([]);
   */
+  const [cep, setCep] = React.useState('');
+
+  function handleBur({ target }) {
+    console.log(target.value);
+  }
+
   return (
     <form>
       <Input
@@ -21,6 +26,7 @@ const App = () => {
         type="text"
         placeholder="00000-000"
         value={cep}
+        onBlur={handleBur}
         setValue={setCep}
       />
     </form>
