@@ -43,6 +43,7 @@ const App = () => {
         onBlur={handleBur}
         setValue={setCep}
       />
+      {error && <p>{error}</p>}
     </form>
   );
   /*
