@@ -37,8 +37,17 @@ const App = () => {
     setCep(target.value);
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (validadteCep(cep)) {
+      console.log('Enviou');
+    } else {
+      console.log('Não enviar');
+    }
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <Input
         label="CEP"
         id="cep"
@@ -49,6 +58,7 @@ const App = () => {
         onChange={handleChanger}
       />
       {error && <p>{error}</p>}
+      <button>Enviar</button>
     </form>
   );
   /*
