@@ -15,7 +15,7 @@ const App = () => {
   const [cep, setCep] = React.useState('');
 
   function handleBur({ target }) {
-    const regex = /\d{5}-?\d{3}/;
+    const regex = /^\d{5}-?\d{3}$/;
     const validacao = regex.test(target.value);
     console.log(validacao);
   }
