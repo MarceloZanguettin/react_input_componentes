@@ -15,8 +15,8 @@ const useForm = (type) => {
     if (value.length === 0) {
       setError('Preencha um valor');
       return false;
-    } else if (!/^\d{5}-?\d{3}$/.test(value)) {
-      setError('Preencha um CEP válido');
+    } else if (!types[type].regex.test(value)) {
+      setError(types[type].message);
       return false;
     } else {
       setError(null);
@@ -24,9 +24,17 @@ const useForm = (type) => {
     }
   }
 
+  function onChange({ target }) {
+    if (error) validate(target.value);
+    setValue(target.value);
+  }
+
   return {
     value,
     setValue,
+    error,
+    onChange,
+    onBlur: () => validate(value),
   };
 };
 
